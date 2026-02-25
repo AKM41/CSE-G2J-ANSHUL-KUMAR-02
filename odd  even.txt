@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h> // For abs()
+
+int main() {
+    int num;
+
+    printf("Enter an integer: ");
+
+    // Validate input to ensure it's an integer
+    if (scanf("%d", &num) != 1) {
+        printf("Invalid input. Please enter an integer.\n");
+        return 1; // Exit with error code
+    }
+
+    // Check even or odd
+    if (num % 2 == 0) {
+        printf("%d is Even.\n", num);
+    } else {
+        printf("%d is Odd.\n", num);
+    }
+
+    return 0; // Successful execution
+}
