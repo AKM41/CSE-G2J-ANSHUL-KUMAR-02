@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main() 
+{
+    
+int rows, cols, target, freq = 0;
+   
+ 
+    // 1. Input Matrix Dimensions
+   
+ printf("Enter rows and columns: ");
+   
+ scanf("%d %d", &rows, &cols);
+  
+  int matrix[rows][cols];
+
+
+    // 2. Input Matrix Elements
+ 
+  printf("Enter matrix elements:\n");
+   
+ for(int i = 0; i < rows; i++) {
+       
+ for(int j = 0; j < cols; j++) {
+           
+ scanf("%d", &matrix[i][j]);
+      
+  }
+   
+ }
+
+   
+ // 3. Input Target Number
+  
+  printf("Enter number to find frequency: ");
+ 
+  scanf("%d", &target);
+
+  
+  // 4. Count Frequency
+   
+ for(int i = 0; i < rows; i++) 
+{
+ 
+      for(int j = 0; j < cols; j++)
+ {
+         
+   if(matrix[i][j] == target) {
+     
+           freq++;
+            }
+   
+     }
+   
+ }
+
+  
+  // 5. Output Result
+   
+ printf("Frequency of %d is: %d\n", target, freq);
+
+  
+  return 0;
+
+}
