@@ -1,0 +1,104 @@
+
+#include <stdio.h>
+
+int main()
+ {
+ 
+   int mat[10][10];
+  
+  int rows, cols;
+  
+  int i, j, isIdentity = 1;
+
+  
+  // 1. Input matrix dimensions
+  
+  printf("Enter the number of rows and columns (must be equal):\\n");
+
+    printf("Rows: ");
+   
+ scanf("%d", &rows);
+  
+  printf("Columns: ");
+   
+ scanf("%d", &cols);
+
+  
+  // Check if it's a square matrix
+  
+  if (rows != cols) {
+      
+  printf("The matrix is not a square matrix, so it cannot be an identity matrix.\\n");
+     
+   return 0;
+  
+  }
+
+  
+  // 2. Input matrix elements
+ 
+   printf("Enter elements of the matrix:\\n");
+ 
+  for (i = 0; i < rows; i++)
+ {
+    
+    for (j = 0; j < cols; j++) 
+{
+          
+  printf("element - [%d],[%d] : ", i, j);
+   
+         scanf("%d", &mat[i][j]);
+     
+   }
+  
+  }
+
+   
+ // 3. Check for identity matrix properties
+  
+  for (i = 0; i < rows; i++) {
+    
+    for (j = 0; j < cols; j++) {
+       
+     if (i == j && mat[i][j] != 1) 
+{
+    
+           // Diagonal element should be 1
+              
+  isIdentity = 0;
+                break;
+         
+   } else if (i != j && mat[i][j] != 0)
+ {
+             
+   // Non-diagonal element should be 0
+   
+             isIdentity = 0;
+        
+        break;
+            }
+       
+ }
+        if (isIdentity == 0) {
+ 
+           break; // Exit the outer loop if a non-identity condition is found
+     
+   }
+  
+  }
+
+    
+// 4. Print the result
+  
+  if (isIdentity == 1) {
+   
+     printf("\\nThe given matrix is an identity matrix.\\n");
+   
+ } else {
+        printf("\\nThe given matrix is not an identity matrix.\\n");
+  
+  }
+
+   
+ return 0;
+}
