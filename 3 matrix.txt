@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int a[3][3], b[3][3], c[3][3], sum[3][3];
+    int i, j;
+
+    // Input for Matrix 1
+    printf("Enter elements for 1st matrix (3x3):\n");
+    for(i=0; i<3; i++)
+        for(j=0; j<3; j++)
+            scanf("%d", &a[i][j]);
+
+    // Input for Matrix 2
+    printf("Enter elements for 2nd matrix (3x3):\n");
+    for(i=0; i<3; i++)
+        for(j=0; j<3; j++)
+            scanf("%d", &b[i][j]);
+
+    // Input for Matrix 3
+    printf("Enter elements for 3rd matrix (3x3):\n");
+    for(i=0; i<3; i++)
+        for(j=0; j<3; j++)
+            scanf("%d", &c[i][j]);
+
+    // Adding the three matrices
+    for(i=0; i<3; i++) {
+        for(j=0; j<3; j++) {
+            sum[i][j] = a[i][j] + b[i][j] + c[i][j];
+        }
+    }
+
+    // Displaying the result
+    printf("\nResultant Matrix (Sum):\n");
+    for(i=0; i<3; i++) {
+        for(j=0; j<3; j++) {
+            printf("%d\t", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
